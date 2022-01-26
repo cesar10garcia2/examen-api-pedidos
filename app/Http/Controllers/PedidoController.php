@@ -25,7 +25,7 @@ class PedidoController extends Controller
             PedidoDetalle::
             join('productos','productos.id','pedido_detalles.producto_id')
             ->select('*','productos.id as producto_id', 'pedido_detalles.id as pedido_detalle_id')
-            ->where('pedido_detalles.id',$pedido_id)->get()
+            ->where('pedido_detalles.pedido_id',$pedido_id)->get()
         );
     }
 
